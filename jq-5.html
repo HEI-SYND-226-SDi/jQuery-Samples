@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="reset.css">
+		<title>JQ-5</title>
+		<script src="jquery-3.3.1.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#s").click(function(){
+					$("#div1").show();							
+				});
+				$("#h").click(function(){
+					$("#div1").hide();							
+				});
+				$("#su").click(function(){
+					$("#div1").slideUp(2000);							
+				});
+				$("#sd").click(function(){
+					$("#div1").slideDown(1000);							
+				});
+				$("#mt").click(function(){
+					$("#div1").animate({left: '150px',top: '10px'});							
+				});
+				$("#st").click(function(){
+					$("#div1").animate({top: '+=10px'});							
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="div1"
+			 style="background:lightblue;left:200px;height:100px;width:100px;position:absolute;">		
+		</div>
+		<div>
+        	<button id="s">show</button><br>
+        	<button id="h">hide</button><br>
+			<button id="su">slide up</button><br>
+			<button id="sd">slide down</button><br>
+			<button id="mt">move to</button><br>
+			<button id="st">step</button><br>
+		</div>
+	</body>
+</html>
+

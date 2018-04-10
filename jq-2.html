@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+</html>
+	<head>
+	  <meta charset="utf-8">
+	  <title>JQ-2</title>
+	  	<script src="jquery-3.3.1.js"></script>
+	  	<script type="text/javascript"> 
+		  	$(document).ready(function(){
+		  		$("p").on({
+		  			mouseenter: function(){
+		  			$(this).css("background-color", "lightgreen");
+        			},  
+					mouseleave: function(){
+					$(this).css("background-color", "lightblue");
+        			}, 
+					click: function(){
+					$(this).css("background-color", "yellow");
+        			}  
+    			});
+    			$("x").dblclick(function(){
+	    			alert("Yes, this is nice!");
+    			});    			
+		  	});
+	    </script>	  
+	</head>
+	<body>
+	  <p>Click or move the mouse pointer over this paragraph.</p>
+	  <x>Double Click Me</x>
+	</body>
+</html>
+
+
+	
+
+
+	

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JQ-3</title>
+		<script src="jquery-3.3.1.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("button").click(function(){
+					$("#div1").load("jq-3.txt"); 	
+					$("#div2").load("jq-3.txt #p2");
+					$("#div3").load("jq-3.txt #p3", function(txt,status,xhr) {
+						if(status == "success")
+                        	alert("External content loaded successfully!");
+						if(status == "error")
+							alert("Error: " + xhr.status + ": " + xhr.statusText);	
+					});
+							
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="div1"><h2>This text will be replaced by AJAX load</h2></div>
+		<div id="div2"><h2>This text will also be replaced</h2></div>
+		<div id="div3"><h2>Even this text will be replaced</h2></div>
+		<button>Change !</button>
+	</body>
+</html>

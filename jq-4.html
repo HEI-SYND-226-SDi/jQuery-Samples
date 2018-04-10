@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="reset.css">
+		<title>JQ-4</title>
+		<script src="jquery-3.3.1.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("button").click(function(){
+					$.post("http://localhost:8080/helloworldservlet/echo",
+					{
+						firstname:$("#firstname").val(),
+						lastname:$("#lastname").val()
+					},
+					function(data,status) {
+						console.log(data);
+						$("#answer").html(data);
+					});							
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<table>
+			<tr>
+		        <td>First name :</td>  
+				<td><input type="text" id="firstname" value="Lilly Lou"></td>
+			</tr>
+			<tr>
+		        <td>Last name :</td>  
+				<td><input type="text" id="lastname" value="Lilly Lou"></td>
+			</tr>
+			<tr><td colspan="2"><hr></td></tr>
+			<tr><td id="answer" colspan="2" style="background:lightblue"></td></tr>
+			<tr><td colspan="2"><hr></td>
+			</tr>
+		</table>
+        <button>Send</button>
+	</body>
+</html>
+
